@@ -14,7 +14,6 @@ def subplots():
     ax.grid()
     return fig, ax
 
-
 fig, ax = subplots()  # Call the local version, not plt.subplots()
 x = np.linspace(-2, 10, 200)
 y = np.sin(x)
