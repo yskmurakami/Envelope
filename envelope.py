@@ -16,7 +16,7 @@ def subplots():
 
 fig, ax = subplots()  # Call the local version, not plt.subplots()
 x = np.linspace(-2, 10, 200)
-y = np.sin(x)
+y = x
 ax.plot(x, y, 'r-', linewidth=2, label='sine function', alpha=0.6)
 ax.legend(loc='lower right')
 plt.show()
