@@ -3,10 +3,18 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pylab as pl
 
-n = 200 # define the number of lines
+FIGNUM = 0 # 0 or 1
+
+if FIGNUM == 0:
+    n = 13
+    area = 1
+if FIGNUM == 1:
+    n = 31
+    area = 1.5
+
 
 def f(x,a): # define the function, x as parameter 
-    return -x**2+a*x
+    return area*(-x**2+a*x)
 
 def subplots(): # learn by "http://matplotlib.org/examples/axes_grid/demo_axisline_style.html"
     
@@ -35,4 +43,6 @@ a = np.linspace(-2*n, 2*n, 100*n) # the range of each line (xmin,xmax,***)
 for x in range(n):
     y = f(x-n/2+0.5, a)
     ax.plot(a, y, 'r-', linewidth=2) # draw lines
+plt.savefig('envelope' + str(FIGNUM) + '.png', transparent=True, bbox_inches='tight', pad_inches=0)
+plt.savefig('envelope' + str(FIGNUM) + '.pdf', bbox_inches='tight', pad_inches=0)
 plt.show()
